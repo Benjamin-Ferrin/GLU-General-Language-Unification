@@ -1,0 +1,12 @@
+{
+  "name": "@glu/javascript",
+  "version": "1.0.0",
+  "description": "JavaScript adapter for the GLU inter-language communication framework",
+  "type": "module",
+  "main": "./GLU.js",
+  "exports": {
+    ".": "./GLU.js"
+  },
+  "author": "GLU contributors",
+  "license": "MIT"
+}
