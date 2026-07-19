@@ -8,7 +8,7 @@ class EventBus:
     def __init__(self):
         self.listeners = {}
 
-    def emit(self,endpoint, *args):
+    def emit(self,endpoint, *args, **kwargs):
         if isinstance(endpoint, str):
             endpoint = Endpoint(endpoint)
 
@@ -35,7 +35,7 @@ class EventBus:
                         f"Function '{function_name}' not found in current file"
                     )
 
-                return function(*args)            
+                return function(*args, **kwargs)            
                
         # Import external modules
         try:
@@ -53,7 +53,7 @@ class EventBus:
                 f"not found in '{target_module}'"
             )
 
-        return function(*args)
+        return function(*args, **kwargs)
     
     
 bus = EventBus()

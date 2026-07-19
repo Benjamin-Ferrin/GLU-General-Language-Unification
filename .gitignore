@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+tempCodeRunnerFile.py
+**/tempCodeRunnerFile.py
 
 # Virtual environments
 .venv/
