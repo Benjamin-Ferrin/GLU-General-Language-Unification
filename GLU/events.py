@@ -55,4 +55,5 @@ class EventBus:
 
         return function(*args)
     
+    
 bus = EventBus()

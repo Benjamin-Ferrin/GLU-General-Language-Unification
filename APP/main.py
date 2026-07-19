@@ -9,3 +9,9 @@ GLU.emit(
     "py@APP.app.console",
     message
 )
+
+# GLU.emit(
+#     "js@APP.main.sendMessage",
+#     message
+# )
+
