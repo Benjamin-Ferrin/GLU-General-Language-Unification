@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from GLU.adapters.python import GLU
+from GLU.python import GLU
 
 message = "The value of a is: "
 

@@ -1,0 +1,27 @@
+{
+    "runtimes": {
+        "py": {
+            "name": "Python",
+            "extensions": [".py"],
+            "adapter": "python"
+        },
+
+        "js": {
+            "name": "JavaScript",
+            "extensions": [".js"],
+            "adapter": "javascript"
+        }
+    },
+
+    "types": [
+        "int",
+        "float",
+        "string",
+        "bool",
+        "null",
+        "list",
+        "map",
+        "GLUProperty"
+    ]
+
+}

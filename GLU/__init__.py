@@ -1,1 +1,1 @@
-from .adapters.python import *
+from .python import *
