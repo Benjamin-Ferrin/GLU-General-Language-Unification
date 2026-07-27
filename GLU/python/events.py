@@ -8,10 +8,22 @@ class EventBus:
     def __init__(self):
         self.listeners = {}
 
-    def emit(self,endpoint, *args, **kwargs):
+    def emit(self, endpoint, *args, **kwargs):
         if isinstance(endpoint, str):
             endpoint = Endpoint(endpoint)
 
+        match endpoint.getLanguage():
+            case "py":
+                routers.pythonRouter(endpoint,  *args, **kwargs)
+            case "js":   
+                routers.jsRouter(endpoint,  *args, **kwargs)
+            case _:
+                raise Exception( f"{endpoint.getLanguage()} language is not implemented yet" )
+                return
+
+class routers:
+    
+    def pythonRouter(self, endpoint,  *args, **kwargs):
         target_module = endpoint.getFilePath()
         function_name = endpoint.getObject()
 
@@ -36,7 +48,7 @@ class EventBus:
                     )
 
                 return function(*args, **kwargs)            
-               
+            
         # Import external modules
         try:
             module = importlib.import_module(target_module)
@@ -54,6 +66,9 @@ class EventBus:
             )
 
         return function(*args, **kwargs)
+
+    def jsRouter(self, endpoint,  *args, **kwargs):
+        pass
     
     
 bus = EventBus()
